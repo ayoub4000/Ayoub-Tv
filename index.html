@@ -1,31 +1,61 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>Ayoub TV</title>
+  <meta charset="UTF-8" />
+  <title>Ayoub TV - البث المباشر</title>
+  <meta http-equiv="refresh" content="30" />
   <style>
     body {
       background-color: #000;
       color: #fff;
-      font-family: Arial;
+      font-family: Tahoma, Arial, sans-serif;
       text-align: center;
       padding: 20px;
     }
+
     h1 {
-      color: #00ffcc;
+      color: #00c8ff;
+      font-size: 28px;
+      margin-bottom: 10px;
     }
-    a {
-      color: #00ccff;
+
+    p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #111;
+      color: #00c8ff;
+      padding: 14px 25px;
       text-decoration: none;
-      display: block;
-      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #00c8ff;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #00c8ff;
+      color: #000;
+    }
+
+    .note {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <h1>مرحبا بك في Ayoub TV</h1>
-  <p>روابط مباشرة:</p>
-  <a href="https://www.facebook.com/100090262900774/live_videos/" target="_blank">بث مباشر 1</a>
-  <a href="https://www.facebook.com/100090262900774/videos/" target="_blank">أرشيف البث</a>
+  <h1>📺 Ayoub TV</h1>
+  <p>مرحبا بك! شاهد البث المباشر الآن:</p>
+
+  <a class="btn" href="https://www.facebook.com/100090262900774/live_videos/" target="_blank">
+    ▶️ مشاهدة البث المباشر
+  </a>
+
+  <p class="note">🔄 يتم تحديث الصفحة كل 30 ثانية تلقائيًا</p>
 </body>
 </html>
