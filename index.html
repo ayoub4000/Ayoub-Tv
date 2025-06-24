@@ -1,1 +1,130 @@
-https://www.instagram.com/reel/DLS5CPcCAYI/?igsh=ZHpoODhkb2psNHBx
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>مباريات اليوم - كأس العالم للأندية</title>
+<style>
+  body {
+    font-family: system-ui, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    direction: rtl;
+  }
+  .container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .match {
+    background: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 30px;
+  }
+  .match .time {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d32f2f;
+  }
+  .match .teams {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #000;
+  }
+  .match .stadium {
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+  }
+  .group {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* نسبة 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin-top: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+  }
+  /* اللوغو فوق الفيديو */
+  .video-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px; /* على اليسار لأن الصفحة RTL */
+    width: 100px; /* حجم اللوغو */
+    opacity: 0.7; /* شفافية اللوغو */
+    pointer-events: none; /* باش ما يقطعش التفاعل مع الفيديو */
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>📅 مباريات اليوم - 23 يونيو 2025</h1>
+
+  <div class="match">
+    <div class="group">المجموعة B</div>
+    <div class="time">20:00</div>
+    <div class="teams">سياتل ساوندرز 🇺🇸 vs باريس سان جيرمان 🇫🇷</div>
+    <div class="stadium">ملعب Lumen Field - سياتل</div>
+
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/AlArabiya/videos/1352642116375278/&show_text=0&width=560"
+        allowfullscreen
+        scrolling="no"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      ></iframe>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Al_Arabiya_Logo.svg/320px-Al_Arabiya_Logo.svg.png" alt="لوغو الناقل" class="video-logo" />
+    </div>
+  </div>
+
+  <div class="match">
+    <div class="group">المجموعة B</div>
+    <div class="time">20:00</div>
+    <div class="teams">أتلتيكو مدريد 🇪🇸 vs بوتافوغو 🇧🇷</div>
+    <div class="stadium">ملعب Rose Bowl - لوس أنجلوس</div>
+  </div>
+
+  <div class="match">
+    <div class="group">المجموعة A</div>
+    <div class="time">01:00 (ليلاً)</div>
+    <div class="teams">إنتر ميامي 🇺🇸 vs بالميراس 🇧🇷</div>
+    <div class="stadium">ملعب Hard Rock - ميامي</div>
+  </div>
+
+  <div class="match">
+    <div class="group">المجموعة A</div>
+    <div class="time">01:00 (ليلاً)</div>
+    <div class="teams">بورتو 🇵🇹 vs الأهلي 🇪🇬</div>
+    <div class="stadium">ملعب MetLife - نيويورك</div>
+  </div>
+</div>
+
+</body>
+</html>
