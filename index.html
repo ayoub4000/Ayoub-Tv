@@ -1,21 +1,35 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <title>مشغل فيديو فيسبوك</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>مشغل فيديو فيسبوك</title>
+<style>
+  body {
+    direction: rtl;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border: none;
+    border-radius: 10px;
+  }
+</style>
 </head>
-<body style="text-align: center; background-color: #000; color: #fff;">
-  <h2>فيديو جديد من فيسبوك</h2>
-  <div style="display: flex; justify-content: center;">
-    <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61568694148541%2Fvideos%2F1269767671232022%2F&show_text=false&autoplay=true" 
-            width="400" 
-            height="400" 
-            style="border:none;overflow:hidden" 
-            scrolling="no" 
-            frameborder="0" 
-            allowfullscreen="true" 
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-    </iframe>
-  </div>
+<body>
+
+<h2>مشغل فيديو فيسبوك</h2>
+
+<iframe 
+  src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/AlArabiya/videos/3147474478737618/&show_text=0&width=560" 
+  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+  allowfullscreen="true"
+  scrolling="no">
+</iframe>
+
 </body>
 </html>
