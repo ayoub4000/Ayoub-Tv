@@ -1,12 +1,16 @@
 {
   "channels": [
     {
-      "name": "beIN Sports 1",
-      "link": "https://example.com/stream1"
+      "name": "قناة العربية",
+      "link": "https://www.facebook.com/AlArabiya/videos/1444848099862732/"
     },
     {
-      "name": "Al Jazeera",
-      "link": "https://example.com/stream2"
+      "name": "بي إن سبورت",
+      "link": "https://www.facebook.com/beinsports/videos/1234567890123456/"
+    },
+    {
+      "name": "مباراة اليوم",
+      "link": "https://www.facebook.com/somepage/videos/9876543210987654/"
     }
   ]
 }
