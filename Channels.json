@@ -1,8 +1,9 @@
 {
-  "channels": [
+  "videos": [
     {
-      "name": "Al Arabiya - مباشر",
-      "link": "https://www.facebook.com/AlArabiya/videos/1444848099862732/"
+      "id": "1",
+      "title": "Al Arabiya Video",
+      "url": "https://www.facebook.com/AlArabiya/videos/1444848099862732/?mibextid=rS40aB7S9Ucbxw6v"
     }
   ]
 }
