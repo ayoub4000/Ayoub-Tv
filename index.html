@@ -1,36 +1,135 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <title>مباريات اليوم</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body { font-family: sans-serif; padding: 15px; background: #fff; }
-    .channel { margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>مباريات اليوم - بث مباشر</title>
+<style>
+  body {
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 20px;
+    direction: rtl; text-align: right;
+  }
+  h1 {
+    color: #e53935;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .note {
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  .match {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 8px;
+  }
+  .match:last-child {
+    border-bottom: none;
+  }
+  .teams {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+  }
+  .competition {
+    font-size: 14px;
+    color: #777;
+  }
+  iframe {
+    display: block;
+    margin: 15px auto 30px auto;
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+</style>
 </head>
 <body>
-  <h2>📺 مباريات اليوم</h2>
-  <div id="channels">جاري التحميل...</div>
 
-  <script>
-    fetch("channels.json")
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById("channels");
-        container.innerHTML = "";
-        data.channels.forEach(c => {
-          container.innerHTML += `
-            <div class="channel">
-              <h3>${c.name}</h3>
-              <a href="${c.link}" target="_blank">▶️ مشاهدة مباشرة</a>
-            </div>
-          `;
-        });
-      })
-      .catch(() => {
-        document.getElementById("channels").innerHTML = "فشل في تحميل القنوات.";
-      });
-  </script>
+<h1>مباريات اليوم - بث مباشر</h1>
+
+<div class="note">
+  ملاحظة: يتم إطلاق البث المباشر للمباراة نصف ساعة قبل بدايتها
+</div>
+
+<div class="container">
+
+  <div class="match">
+    <div class="teams">بورتو vs الأهلي (بث مباشر)</div>
+    <div class="competition">كأس العالم للأندية</div>
+    <iframe 
+      src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Akhbar7.ma/videos/1213597686734077/&autoplay=1&mute=1&show_text=0&width=560" 
+      allowfullscreen="true" 
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+  </div>
+
+  <div class="match">
+    <div class="teams">إنتر ميامي vs بالميراس (بث مباشر)</div>
+    <div class="competition">كأس العالم للأندية</div>
+    <iframe
+      src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/hanenboubaker2/videos/728189286567088/&autoplay=1&mute=1&show_text=0&width=560"
+      allowfullscreen="true"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+  </div>
+
+  <div class="match">
+    <div class="teams">بنفيكا vs بايرن ميونخ (بث مباشر)</div>
+    <div class="competition">كأس العالم للأندية</div>
+    <iframe 
+      src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/AlArabiya/videos/725362769897485/&autoplay=1&mute=1&show_text=0&width=560"
+      allowfullscreen="true"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+  </div>
+
+  <div class="match">
+    <div class="teams">أوكلاند سيتي vs بوكا جونيورز</div>
+    <div class="competition">كأس العالم للأندية</div>
+  </div>
+
+  <div class="match">
+    <div class="teams">جزر غوادلوب vs غواتيمالا</div>
+    <div class="competition">كأس الكونكاكاف الذهبية</div>
+  </div>
+
+  <div class="match">
+    <div class="teams">مصر vs ألمانيا</div>
+    <div class="competition">كأس العالم للشباب لكرة اليد</div>
+  </div>
+
+  <div class="match">
+    <div class="teams">مباراة الأسبوع الثالث</div>
+    <div class="competition">دوري مراكز شباب كفر الشيخ</div>
+  </div>
+
+</div>
+
 </body>
 </html>
