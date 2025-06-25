@@ -1,65 +1,25 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <title>البث المباشر من فيسبوك</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      direction: rtl;
-      padding: 20px;
-      background: #f9f9f9;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .channel {
-      background: #fff;
-      padding: 15px;
-      margin-bottom: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .channel h3 {
-      margin-bottom: 15px;
-      color: #333;
-    }
-  </style>
+<meta charset="UTF-8" />
+<title>بث مباشر فيسبوك</title>
 </head>
 <body>
 
-  <h2>البث المباشر من فيسبوك</h2>
+<h2>آخر بث مباشر</h2>
 
-  <div id="channels-container"></div>
+<div id="videoContainer">جار تحميل البث...</div>
 
-  <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v17.0"></script>
-
-  <script>
-    fetch('channels.json')
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById('channels-container');
-        data.channels.forEach(channel => {
-          const div = document.createElement('div');
-          div.className = 'channel';
-          div.innerHTML = `
-            <h3>${channel.name}</h3>
-            <div class="fb-video" data-href="${channel.link}" data-width="auto" data-show-text="false"></div>
-          `;
-          container.appendChild(div);
-        });
-
-        if (typeof FB !== 'undefined') {
-          FB.XFBML.parse();
-        }
-      })
-      .catch(() => {
-        document.getElementById('channels-container').textContent = 'خطأ في تحميل القنوات.';
-      });
-  </script>
+<script>
+fetch('videos.json')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('videoContainer').innerHTML = `<iframe src="${data.live_video_url}" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`;
+  })
+  .catch(() => {
+    document.getElementById('videoContainer').innerText = 'فشل تحميل البث.';
+  });
+</script>
 
 </body>
 </html>
