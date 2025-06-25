@@ -1,33 +1,12 @@
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>قنوات مباشرة</title>
-</head>
-<body style="background:#111; color:white; font-family:sans-serif;">
-  <h1>📺 القنوات المباشرة</h1>
-  <div id="channels"></div>
-
-  <script>
-    const data = {
-      "channels": [
-        {
-          "name": "Chouf TV - البث المباشر",
-          "link": "https://www.facebook.com/chouftv.maroc/videos/1225492639377323/"
-        },
-        {
-          "name": "Al Arabiya - مباشر",
-          "link": "https://www.facebook.com/AlArabiya/videos/1444848099862732/"
-        }
-      ]
-    };
-
-    const container = document.getElementById("channels");
-    data.channels.forEach(ch => {
-      container.innerHTML += `<p><a href="ch.link" target="_blank" style="color:yellow">{ch.name}</a></p>`;
-    });
-  </script>
-</body>
-</html>
-```
+{
+  "channels": [
+    {
+      "name": "Chouf TV - البث المباشر",
+      "link": "https://www.facebook.com/chouftv.maroc/videos/1225492639377323/"
+    },
+    {
+      "name": "Al Arabiya - مباشر",
+      "link": "https://www.facebook.com/AlArabiya/videos/1444848099862732/"
+    }
+  ]
+}
