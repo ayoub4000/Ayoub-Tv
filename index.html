@@ -2,57 +2,39 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <title>البث داخل التطبيق</title>
+  <title>قنوات البث المباشر</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      direction: rtl;
-      text-align: right;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
-    h2 {
-      color: #222;
-      margin-bottom: 20px;
-    }
-    .channel {
-      background: #fff;
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 25px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
+    body { font-family: Arial, sans-serif; padding: 20px; direction: rtl; background: #f9f9f9; }
+    h2 { color: #222; margin-bottom: 20px; }
+    .channel { background: white; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 1px 5px rgba(0,0,0,0.1); }
+    .channel h3 { margin: 0 0 10px; color: #007bff; }
+    .channel a { text-decoration: none; color: white; background: #007bff; padding: 10px 15px; border-radius: 5px; display: inline-block; }
   </style>
 </head>
 <body>
+  <h2>قنوات البث المباشر</h2>
+  <div id="channels">جارِ التحميل...</div>
 
-  <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" 
-    src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v17.0"></script>
-
-  <h2>📺 القنوات المباشرة</h2>
-
-  <div class="channel">
-    <h3>Chouf- البث المباشر</h3>
-    <div class="fb-video" 
-         data-href="https://www.facebook.com/chouftv.maroc/videos/1225492639377323/" 
-         data-width="auto" data-show-text="false"></div>
-  </div>
-
-  <div class="channel">
-    <h3>Al Arabiya - مباشر</h3>
-    <div class="fb-video" 
-         data-href="https://www.facebook.com/AlArabiya/videos/1444848099862732/" 
-         data-width="auto" data-show-text="false"></div>
-  </div>
-
-  <div class="channel">
-    <h3>BeIN Sports - بث مباشر</h3>
-    <div class="fb-video" 
-         data-href="https://www.facebook.com/beinsports/videos/1234567890123456/" 
-         data-width="auto" data-show-text="false"></div>
-  </div>
-
+  <script>
+    fetch('channels.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('channels');
+        container.innerHTML = '';
+        data.channels.forEach(channel => {
+          const div = document.createElement('div');
+          div.classList.add('channel');
+          div.innerHTML = `
+            <h3>${channel.name}</h3>
+            <a href="${channel.link}" target="_blank">▶️ شاهد الآن</a>
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(() => {
+        document.getElementById('channels').textContent = 'فشل في تحميل القنوات.';
+      });
+  </script>
 </body>
 </html>
