@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8" />
-<title>قنوات البث المباشر</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style>
-  body { font-family: Arial; padding: 20px; direction: rtl; background: #f9f9f9; }
-  h2 { color: #222; margin-bottom: 20px; }
-  .channel { background: white; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 1px 5px rgba(0,0,0,0.1); }
-  .channel h3 { margin: 0 0 10px; color: #007bff; }
-  .channel a { text-decoration: none; color: white; background: #007bff; padding: 10px 15px; border-radius: 5px; display: inline-block; }
-</style>
+  <meta charset="UTF-8" />
+  <title>قنوات البث المباشر</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; direction: rtl; background: #f9f9f9; }
+    h2 { color: #222; margin-bottom: 20px; }
+    .channel { background: white; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 1px 5px rgba(0,0,0,0.1); cursor: pointer; }
+    .channel:hover { background: #e6f0ff; }
+    video { width: 100%; max-height: 300px; margin-top: 20px; border-radius: 8px; background: black; }
+  </style>
 </head>
 <body>
-<h2>قنوات البث المباشر</h2>
+  <h2>قنوات البث المباشر</h2>
+  <div id="channels">جارِ التحميل...</div>
+  <video id="player" controls></video>
 
-<div class="channel">
-  <h3>Chouf TV - البث المباشر</h3>
-  <a href="https://www.facebook.com/chouftv.maroc/videos/1225492639377323/" target="_blank">▶️ شاهد الآن</a>
-</div>
+  <script>
+    const player = document.getElementById('player');
+    const container = document.getElementById('channels');
 
-<div class="channel">
-  <h3>Al Arabiya - مباشر</h3>
-  <a href="https://www.facebook.com/AlArabiya/videos/1444848099862732/" target="_blank">▶️ شاهد الآن</a>
-</div>
-
+    fetch('channels.json')
+      .then(res => res.json())
+      .then(data => {
+        container.innerHTML = '';
+        data.channels.forEach(channel => {
+          const div = document.createElement('div');
+          div.className = 'channel';
+          div.textContent = channel.name;
+          div.onclick = () => {
+            player.src = channel.link;
+            player.play();
+          };
+          container.appendChild(div);
+        });
+      })
+      .catch(() => {
+        container.textContent = 'فشل في تحميل القنوات.';
+      });
+  </script>
 </body>
 </html>
