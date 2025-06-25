@@ -1,0 +1,12 @@
+{
+  "channels": [
+    {
+      "name": "beIN Sports 1",
+      "link": "https://example.com/stream1"
+    },
+    {
+      "name": "Al Jazeera",
+      "link": "https://example.com/stream2"
+    }
+  ]
+}
