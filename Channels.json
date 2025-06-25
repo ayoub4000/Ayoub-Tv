@@ -1,9 +1,3 @@
 {
-  "videos": [
-    {
-      "id": "1",
-      "title": "Al Arabiya Video",
-      "url": "https://www.facebook.com/AlArabiya/videos/1444848099862732/?mibextid=rS40aB7S9Ucbxw6v"
-    }
-  ]
+  "live_video_url": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FAlHadath%2Fvideos%2F123456789012345%2F&show_text=0&width=560"
 }
