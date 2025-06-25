@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <title>قنوات فيسبوك المباشرة</title>
+  <title>البث المباشر من فيسبوك</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
@@ -30,7 +30,7 @@
 </head>
 <body>
 
-  <h2>قنوات فيسبوك المباشرة</h2>
+  <h2>البث المباشر من فيسبوك</h2>
 
   <div id="channels-container"></div>
 
@@ -43,23 +43,21 @@
       .then(data => {
         const container = document.getElementById('channels-container');
         data.channels.forEach(channel => {
-          const channelDiv = document.createElement('div');
-          channelDiv.className = 'channel';
-          channelDiv.innerHTML = `
+          const div = document.createElement('div');
+          div.className = 'channel';
+          div.innerHTML = `
             <h3>${channel.name}</h3>
             <div class="fb-video" data-href="${channel.link}" data-width="auto" data-show-text="false"></div>
           `;
-          container.appendChild(channelDiv);
+          container.appendChild(div);
         });
 
-        // بعد إضافة الفيديوهات، نطلب من Facebook SDK إعادة تهيئة المشغل
         if (typeof FB !== 'undefined') {
           FB.XFBML.parse();
         }
       })
-      .catch(err => {
-        document.getElementById('channels-container').innerText = 'حدث خطأ أثناء تحميل القنوات.';
-        console.error(err);
+      .catch(() => {
+        document.getElementById('channels-container').textContent = 'خطأ في تحميل القنوات.';
       });
   </script>
 
