@@ -1,1 +1,36 @@
-https://www.facebook.com/share/v/16sD88XLw9/
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>مباريات اليوم</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: sans-serif; padding: 15px; background: #fff; }
+    .channel { margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h2>📺 مباريات اليوم</h2>
+  <div id="channels">جاري التحميل...</div>
+
+  <script>
+    fetch("channels.json")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("channels");
+        container.innerHTML = "";
+        data.channels.forEach(c => {
+          container.innerHTML += `
+            <div class="channel">
+              <h3>${c.name}</h3>
+              <a href="${c.link}" target="_blank">▶️ مشاهدة مباشرة</a>
+            </div>
+          `;
+        });
+      })
+      .catch(() => {
+        document.getElementById("channels").innerHTML = "فشل في تحميل القنوات.";
+      });
+  </script>
+</body>
+</html>
