@@ -1,12 +1,8 @@
 {
   "channels": [
     {
-      "name": "Chouf TV - البث المباشر",
-      "link": "https://www.facebook.com/chouftv.maroc/videos/1225492639377323/"
-    },
-    {
-      "name": "Al Arabiya - مباشر",
-      "link": "https://www.facebook.com/AlArabiya/videos/1444848099862732/"
+      "name": "قناة تجريبية",
+      "link": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
     }
   ]
 }
