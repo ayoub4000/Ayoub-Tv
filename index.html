@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8" />
-<title>بث مباشر فيسبوك</title>
+  <meta charset="UTF-8">
+  <title>بث قناة العربية مباشر</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+    }
+    video {
+      width: 100%;
+      height: 100vh;
+      background: #000;
+    }
+  </style>
 </head>
 <body>
 
-<h2>آخر بث مباشر</h2>
-
-<div id="videoContainer">جار تحميل البث...</div>
-
-<script>
-fetch('videos.json')
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById('videoContainer').innerHTML = `<iframe src="${data.live_video_url}" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`;
-  })
-  .catch(() => {
-    document.getElementById('videoContainer').innerText = 'فشل تحميل البث.';
-  });
-</script>
+  <video controls autoplay muted>
+    <source src="https://live-hls-web-aje.getaj.net/AJE/01.m3u8" type="application/x-mpegURL">
+    المتصفح ديالك ما كيدعم الفيديو الحي.
+  </video>
 
 </body>
 </html>
